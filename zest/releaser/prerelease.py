@@ -63,7 +63,8 @@ class Prereleaser(baserelease.Basereleaser):
         self._grab_version()
         if self.data['update_history']:
             # Look for unwanted 'Nothing changed yet' in latest header.
-            self._check_nothing_changed()
+            # TODO: add a mechanism to control this via rc file
+            # self._check_nothing_changed()
             # Look for required text under the latest header.
             self._check_required()
 
