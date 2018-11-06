@@ -194,9 +194,6 @@ class Basereleaser(object):
                 good_heading,
                 underline_char * len(good_heading),
                 '',
-                self.data['nothing_changed_yet'],
-                '',
-                '',
             ]
             if empty:
                 history_lines = []
