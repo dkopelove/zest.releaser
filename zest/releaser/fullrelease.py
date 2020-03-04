@@ -34,3 +34,7 @@ def main():
     logger.info('Finished full release.')
     if tagdir:
         logger.info("Reminder: tag checkout is in %s", tagdir)
+
+
+if __name__ == '__main__':
+    main()

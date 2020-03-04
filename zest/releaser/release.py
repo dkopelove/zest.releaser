@@ -217,6 +217,9 @@ class Releaser(baserelease.Basereleaser):
         response = twine_function(*twine_args)
         if response is not None and response.status_code == codes.OK:
             return
+        # if we get 409 that's conflict (which I'm going to interpret as the package has already been uploaded
+        if response is not None and response.status_code == codes.CONFLICT:
+            return
         # Something went wrong.  Close repository.
         repository.close()
         self._drop_repository(server)
